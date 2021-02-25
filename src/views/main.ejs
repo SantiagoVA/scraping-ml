@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/handshake.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <title>Scraping MercadoLibre</title>
+</head>
+<body>
+    <nav>
+        <ul class="nav-ul">
+            <li><a href="https://github.com/SantiagoVA" target=_blank><i class="fab fa-github"></i></a></li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <div class="container-h1">
+<h1>Mercado Libre Scraping <br>🤝</h1>
+        </div>
+        
+        <form action="/search" method="POST">
+        <input type="text" placeholder="Busca algún producto" name="searchProduct"> 
+        <button type="submit">Buscar</button><br>
+        <label for="">*La busqueda puede tardar alrededor de 20 segundos</label>
+    </form>
+    <div class="container-ul">
+     <ul id="container-list">
+        
+    </ul>   
+    </div>
+    
+    </main>
+    
+    <script src="../json.js"></script>
+</body>
+</html>
