@@ -33,13 +33,12 @@ i:hover{
     color: rgb(136, 123, 123);
 }
 
-/* .container-h1{
-    width: 50%;
-    background: white;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-} */
+select{
+    height: 30px;
+    border-radius: 10px;
+    font-family: "San Francisco";
+    font-weight: bold;
+}
 
 h1{
     font-weight: bold;
