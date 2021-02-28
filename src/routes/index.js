@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const puppeteer = require('puppeteer');
-const { promises: fsp } = require('fs');
-const { join } = require('path');
-const fileName = "data.json";
+const dataJson = require('../models/dataSchema');
+const bodyParser = require('body-parser')
+const jsonParser = bodyParser.json()
+
 
 
 
@@ -11,8 +12,9 @@ router.get('/', (req, res) => {
     res.render('main')
 });
 
-router.post('/search', (req, res) => {
-    var nameSearch = req.body.searchProduct;
+router.post('/search', jsonParser, (req, res) => {
+    const nameSearch = req.body.searchProduct;
+    console.log(nameSearch)
     
 async function scraping(){
     const browser = await puppeteer.launch();
@@ -37,9 +39,8 @@ async function scraping(){
         }
     })
     cards = data.cards
-    fsp.writeFile(join(process.cwd(), 'src','public', 'dataFiles', fileName), `${JSON.stringify(cards)}`, ()=>{
-        console.log('data received')
-    })
+    console.log(cards)
+    await dataJson.update({name: "nameID"}, {jsonObject: cards});
 }
     
     getPageData();
@@ -49,5 +50,6 @@ async function scraping(){
 scraping();
 res.redirect('/');
 });
+
 
 module.exports = router;
